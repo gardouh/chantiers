@@ -1,37 +1,44 @@
 import React, { Component } from 'react';
-import { useTheme } from '@react-navigation/native';
-import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, Button,ScrollView, StyleSheet, StatusBar } from 'react-native';
+import Row from './Row';
 
-const theme = () =>{
-    return  useTheme;
-}
-const colors = () =>{
-    return  useTheme;
-} 
 
-class PointingScreen extends Component {
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
+            const styles = StyleSheet.create({
+            container: {
+                flex: 1,
+            },
+            scrollView: {
+                backgroundColor: '#F5F5F5',
+                flex: 1,
+                padding: 10,
+                paddingTop: STATUSBAR_HEIGHT,
+            },
+            });
+    export default class PointingScreen extends Component {
+        
 
- 
-  render() {
-    
-    return (
-    <View style={styles.container}>
-        <StatusBar barStyle= { theme.dark ? "light-content" : "dark-content" }/>
-        <Text style={{color: colors.text}}>Home Screen</Text>
-      <Button
-        title="Go to details screen"
-        onPress={() => navigation.navigate("Details")}
-      />
-      </View>
-    );
-  }
-}
-const styles = StyleSheet.create({
-    container: {
-      flex: 1, 
-      alignItems: 'center', 
-      justifyContent: 'center'
-    },
-  });
-
-export default PointingScreen;
+        constructor(props) {
+            super(props);
+            
+        }
+      
+      
+        render() {
+          return (
+            <View style={styles.container}>
+                <StatusBar
+                barStyle="light-content"
+                />
+                <ScrollView
+                style={styles.scrollView}
+                >
+                    <Row zIndex={100} />
+                    <Row zIndex={90} />
+                    <Row zIndex={80} />
+                    <Row zIndex={70} />
+                </ScrollView>
+            </View>
+          );
+        }
+      }
