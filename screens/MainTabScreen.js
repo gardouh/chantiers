@@ -9,6 +9,8 @@ import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
 import ExploreScreen from './ExploreScreen';
 import ProfileScreen from './ProfileScreen';
+import PointingScreen from './PointingScreen';
+
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
@@ -25,6 +27,17 @@ const MainTabScreen = () => (
         component={HomeStackScreen}
         options={{
           tabBarLabel: 'Home',
+          tabBarColor: '#009387',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Pointing"
+        component={PointingScreen}
+        options={{
+          tabBarLabel: 'Pointing',
           tabBarColor: '#009387',
           tabBarIcon: ({ color }) => (
             <Icon name="ios-home" color={color} size={26} />

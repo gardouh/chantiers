@@ -27,6 +27,7 @@ import MainTabScreen from './screens/MainTabScreen';
 import SupportScreen from './screens/SupportScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import BookmarkScreen from './screens/BookmarkScreen';
+import PointingScreen from './screens/PointingScreen';
 
 import { AuthContext } from './components/context';
 
@@ -172,6 +173,7 @@ const App = () => {
           <Drawer.Screen name="SupportScreen" component={SupportScreen} />
           <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
           <Drawer.Screen name="BookmarkScreen" component={BookmarkScreen} />
+          <Drawer.Screen name="PointingScreen" component={PointingScreen} />
         </Drawer.Navigator>
       )
     :
