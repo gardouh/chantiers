@@ -3,25 +3,25 @@ import React from 'react';
 import {
   View,
   TouchableHighlight,
-  Text
+  Button
 } from 'react-native';
 
 const Line = ({ style, onPress }) => {
   if (onPress) {
     return (
-      <TouchableHighlight
+      <Button
+      title="Press me"
+        style={[
+          {
+            marginBottom: 10,
+            borderRadius: 2,
+          },
+          style,
+        ]}
         onPress={onPress}
       >
-        <View style={[
-          {
-            width: 50,
-            height: 50,
-            backgroundColor: 'red'
-          }
-        ]}>
-          <Text>Détails</Text>
-        </View>
-      </TouchableHighlight>
+        <View />
+      </Button>
     );
   }
 
@@ -60,21 +60,21 @@ const ThickLine = ({ color, width = 70, ...props }) => (
 );
 
 export const ThinGrayLine = (props) => (
-  <ThinLine color={'red'} {...props} />
+  <ThinLine color={'#BDC2C9'} {...props} />
 );
 
 export const ThickGrayLine = (props) => (
-  <ThickLine color={'black'} {...props} />
+  <ThickLine color={'#BDC2C9'} {...props} />
 );
 
 export const ThickWhiteLine = (props) => (
-  <ThickLine color={'blue'} {...props} />
+  <ThickLine color={'#FFFFFF'} {...props} />
 );
 
 export const ThickDarkGrayLine = (props) => (
-  <ThickLine color={'green'} {...props} />
+  <ThickLine color={'#33373B'} {...props} />
 );
 
 export const ThinRedLine = (props) => (
-  <ThinLine color={'grey'} {...props} />
+  <ThinLine color={'#DB0000'} {...props} />
 );

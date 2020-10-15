@@ -2,8 +2,9 @@ import React from 'react';
 
 import {
   View,
-  StyleSheet,Text
+  StyleSheet,Text, Button, Image
 } from 'react-native';
+import { color } from 'react-native-reanimated';
 
 import {
   ThinGrayLine,
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
   },
   leftPane: {
     flex: 1,
-    backgroundColor: '#33373B',
+    backgroundColor: '#90CAF9',
     padding: 16,
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -30,35 +31,45 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#fff',
   },
+  stretch: {
+    width: 30,
+    height: 30,
+    resizeMode: 'stretch',
+  },
+
 });
 
 export default ({ onPress }) => (
   <View style={styles.container}>
 
     <View style={styles.leftPane}>
-      <ThickGrayLine />
+      <Image
+        style={styles.stretch}
+        source={require('../assets/check.svg')}
+      />
       <Text>InfoCard</Text>
       <View>
-        <ThinRedLine onPress={onPress} />
-        <ThickGrayLine width={80} />
+        <ThinRedLine onPress={onPress} >
+          <Text style={{color: 'white'}}>Détails</Text>
+        </ThinRedLine>
       </View>
     </View>
 
     <View style={styles.rightPane}>
       <View style={{ flex: 1, flexDirection: 'column' }}>
-        <ThickGrayLine width={140} />
-        <ThickGrayLine width={160} />
+        <Text width={160} >rightPane</Text>
+        <Text width={160} >rightPane</Text>
       </View>
 
       <View style={{ flexDirection: 'row' }}>
         <View style={{ flex: 1 }}>
-          <ThinGrayLine width={60} />
-          <ThickDarkGrayLine width={60} />
+          <Text width={160} >rightPane</Text>
+          <Text width={160} >rightPane</Text>
         </View>
 
         <View style={{ flex: 1 }}>
-          <ThinGrayLine width={60} />
-          <ThickDarkGrayLine width={60} />
+           <Text width={160} >rightPane</Text>
+          <Text width={160} >rightPane</Text>
         </View>
       </View>
     </View>
