@@ -1,37 +1,71 @@
 import React, { Component } from 'react';
-import { useTheme } from '@react-navigation/native';
-import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, Button,ScrollView, StyleSheet, StatusBar } from 'react-native';
+import Row from './Row';
+import { FloatingAction } from "react-native-floating-action";
 
-const theme = () =>{
-    return  useTheme;
-}
-const colors = () =>{
-    return  useTheme;
-} 
 
-class PointingScreen extends Component {
-
- 
-  render() {
-    
-    return (
-    <View style={styles.container}>
-        <StatusBar barStyle= { theme.dark ? "light-content" : "dark-content" }/>
-        <Text style={{color: colors.text}}>Home Screen</Text>
-      <Button
-        title="Go to details screen"
-        onPress={() => navigation.navigate("Details")}
-      />
-      </View>
-    );
+const actions = [
+  {
+    text: "Arrivée",
+    icon: require("../assets/ic_accessibility_white.png"),
+    name: "bt_accessibility",
+    position: 2
+  },
+  {
+    text: "Départ",
+    icon: require("../assets/ic_language_white.png"),
+    name: "bt_language",
+    position: 1
   }
-}
-const styles = StyleSheet.create({
-    container: {
-      flex: 1, 
-      alignItems: 'center', 
-      justifyContent: 'center'
-    },
-  });
+];
 
-export default PointingScreen;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
+            const styles = StyleSheet.create({
+            container: {
+                flex: 1,
+            },
+            scrollView: {
+                backgroundColor: '#F5F5F5',
+                flex: 1,
+                padding: 10,
+                paddingTop: STATUSBAR_HEIGHT,
+            },
+            });
+
+            
+export default class PointingScreen extends Component {
+        
+
+        constructor(props) {
+            super(props);
+            
+        }
+      
+        render() {
+          return (
+            <View style={styles.container}>
+                <StatusBar
+                barStyle="light-content"
+                />
+                <ScrollView
+                style={styles.scrollView}
+                >
+                    <Row zIndex={100} />
+                    <Row zIndex={90} />
+                    <Row zIndex={80} />
+                    <Row zIndex={70} />
+                    <Row zIndex={60} />
+                    <Row zIndex={50} />
+                    <Row zIndex={40} />
+                    <Row zIndex={30} />
+                </ScrollView>
+                <FloatingAction
+                    actions={actions}
+                    onPressItem={name => {
+                    console.log(`selected button: ${name}`);
+                    }}
+                />
+            </View>
+          );
+        }
+      }
