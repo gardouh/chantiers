@@ -9,7 +9,12 @@ import {
 const Line = ({ style, onPress }) => {
   if (onPress) {
     return (
-      {/* 
+      
+     <View/>
+      
+    );
+  }
+ {/* 
   <Button
       title="Press me"
         style={[
@@ -21,13 +26,10 @@ const Line = ({ style, onPress }) => {
         ]}
         onPress={onPress}
       >
-        <View />
+        
       </Button>
-    */}  
-      
-    );
-  }
-
+    */} 
+     
   return (
     <View
       style={[
