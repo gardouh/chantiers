@@ -9,7 +9,8 @@ import {
 const Line = ({ style, onPress }) => {
   if (onPress) {
     return (
-      <Button
+      {/* 
+  <Button
       title="Press me"
         style={[
           {
@@ -22,6 +23,8 @@ const Line = ({ style, onPress }) => {
       >
         <View />
       </Button>
+    */}  
+      
     );
   }
 
