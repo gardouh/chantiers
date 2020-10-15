@@ -3,7 +3,7 @@ import { View, Text, Button,ScrollView, StyleSheet, StatusBar } from 'react-nati
 import Row from './Row';
 import { FloatingAction } from "react-native-floating-action";
 import {TouchableOpacity } from 'react-native'
-import { Root, Toast } from 'popup-ui'
+import { Root, Popup } from 'popup-ui'
 
 const actions = [
   {
@@ -46,10 +46,11 @@ export default class PointingScreen extends Component {
           return (
             
             <View style={styles.container}>
+              <Root>
                 <StatusBar
                 barStyle="light-content"
                 />
-                <Root>
+                
                 <ScrollView
                 style={styles.scrollView}
                 >
@@ -62,18 +63,21 @@ export default class PointingScreen extends Component {
                     <Row zIndex={40} />
                     <Row zIndex={30} />
                 </ScrollView>
-                </Root>
+                
                 <FloatingAction
                     actions={actions}
                     onPressItem={name => {
-                      Toast.show({
-                        title: 'User created',
-                        text: 'Your user was successfully created, use the app now.',
-                        color: '#2ecc71'
-                    })
+                      Popup.show({
+                        type: 'Success',
+                        title: 'Pointage pris en compte',
+                        button: true,
+                        textBody: 'Vous avez pointé à 11h15',
+                        buttonText: 'Ok',
+                        callback: () => Popup.hide()
+                      })
                     }}
                 />
-
+              </Root>
             </View>
           );
         }
