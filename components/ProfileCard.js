@@ -74,7 +74,7 @@ export default class Row extends Component {
             margin: 14,
             borderRadius: 2,
           }}
-        >
+        >{/* 
           <TouchableHighlight
             style={{
               flex: 1,
@@ -83,11 +83,15 @@ export default class Row extends Component {
             }}
             onPress={onPress}
           >
+            Multi
+            line
+            comment
+          
             <Text>
               PRESS ME
             </Text>
           </TouchableHighlight>
-
+*/}  
         </View>
       </View>
     );

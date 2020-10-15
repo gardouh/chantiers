@@ -4,14 +4,7 @@ import {
   View,
   StyleSheet,Text, Button, Image
 } from 'react-native';
-import { color } from 'react-native-reanimated';
 
-import {
-  ThinGrayLine,
-  ThickGrayLine,
-  ThickDarkGrayLine,
-  ThinRedLine,
-} from './Lines';
 
 const styles = StyleSheet.create({
   container: {
@@ -47,29 +40,24 @@ export default ({ onPress }) => (
         style={styles.stretch}
         source={require('../assets/check.svg')}
       />
-      <Text>InfoCard</Text>
-      <View>
-        <ThinRedLine onPress={onPress} >
-          <Text style={{color: 'white'}}>Détails</Text>
-        </ThinRedLine>
-      </View>
+      <Text style={{color: 'white'}}>Jeudi 15 Octobre 2020</Text>
     </View>
 
     <View style={styles.rightPane}>
       <View style={{ flex: 1, flexDirection: 'column' }}>
-        <Text width={160} >rightPane</Text>
-        <Text width={160} >rightPane</Text>
+        <Text width={160}>Heure arrivée</Text>
+        <Text width={160} style={{color: '#989898' }}>9h10</Text>
       </View>
 
       <View style={{ flexDirection: 'row' }}>
         <View style={{ flex: 1 }}>
-          <Text width={160} >rightPane</Text>
-          <Text width={160} >rightPane</Text>
+        <Text width={160}>Heure départ</Text>
+        <Text width={160} style={{color: '#989898' }}>17h09</Text>
         </View>
 
         <View style={{ flex: 1 }}>
-           <Text width={160} >rightPane</Text>
-          <Text width={160} >rightPane</Text>
+        <Text width={160}>Position</Text>
+        <Text width={160} style={{color: '#989898' }}>15,19</Text>
         </View>
       </View>
     </View>

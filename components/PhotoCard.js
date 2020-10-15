@@ -38,9 +38,6 @@ export default ({ onPress }) => (
       }}
     >
       <Text>PhotoCard</Text>
-      <ThickWhiteLine width={40} onPress={onPress} />
-      <ThickWhiteLine width={60} />
-      <ThickWhiteLine width={40} />
     </View>
 
     <View style={styles.card}>
@@ -53,9 +50,6 @@ export default ({ onPress }) => (
         }}
       >
         <Text>PhotoCard</Text>
-        <ThinGrayLine width={40} />
-        <ThinGrayLine width={80} />
-        <ThinGrayLine width={50} onPress={onPress} />
       </View>
     </View>
 
