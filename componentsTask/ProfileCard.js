@@ -59,12 +59,6 @@ export default class Row extends Component {
     return (
       <View
         style={{
-          backgroundColor: '#fff',
-          flex: 1,
-          borderTopWidth: StyleSheet.hairlineWidth,
-          borderTopColor: '#BDC2C9',
-          borderBottomLeftRadius: 2,
-          borderBottomRightRadius: 2,
         }}
       >
         <View
@@ -107,11 +101,10 @@ export default class Row extends Component {
         }}
         style={{
           flex: 1,
-          backgroundColor: '#FFF',
+          backgroundColor: '#FFDDC1',
           flexDirection: 'column',
         }}
       >
-
             <TouchableHighlight
                 onPress={onPress}
               >
