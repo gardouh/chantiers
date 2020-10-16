@@ -24,8 +24,7 @@ const styles = StyleSheet.create({
 export default ({ onPress }) => (
   <View style={styles.container}>
     <View style={{ flex: 1 }}>
-      <ThickGrayLine width={60} />
-      <ThinGrayLine width={120} />
+      <Text>Hello word</Text>
     </View>
 
     <View style={{ flex: 1 }}>

@@ -4,6 +4,7 @@ import Row from './RowTask';
 import { FloatingAction } from "react-native-floating-action";
 import {TouchableOpacity } from 'react-native'
 import { Root, Popup } from 'popup-ui'
+import axios from 'axios';
 
 const actions = [
   {
@@ -40,6 +41,13 @@ export default class HomeScreen extends Component {
         constructor(props) {
             super(props);
             
+        }
+        componentWillMount(){
+          axios.get('http://a10a354793c3.ngrok.io/weatherforecast')
+            .then(res => {
+            const nameList = res;
+            console.log(nameList);
+          })
         }
       
         render() {

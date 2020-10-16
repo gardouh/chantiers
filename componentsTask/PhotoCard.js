@@ -14,13 +14,10 @@ import {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#33373B',
-    padding: 10,
-    flexDirection: 'column',
   },
   card: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF4EB',
     justifyContent: 'flex-end',
   },
 });
@@ -31,25 +28,30 @@ export default ({ onPress }) => (
     <View
       style={{
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        backgroundColor: '#5A4A9C',
+        backgroundColor: '#FFB77B',
         height: 40,
         padding: 10,
       }}
     >
-      <Text>PhotoCard</Text>
+      <Text>Hello word</Text> 
     </View>
 
     <View style={styles.card}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          padding: 10,
-          paddingBottom: 0,
-        }}
-      >
-        <Text>PhotoCard</Text>
+    <View style={{ flex: 1, flexDirection: 'column' }}>
+        <Text width={160}>Date de commencement</Text>
+        <Text width={160} style={{color: '#989898' }}>15/10/2020</Text>
+      </View>
+
+      <View style={{ flexDirection: 'row' }}>
+        <View style={{ flex: 1 }}>
+        <Text width={160}>Date de fin prévu</Text>
+        <Text width={160} style={{color: '#989898' }}>15/10/2022</Text>
+        </View>
+
+        <View style={{ flex: 1 }}>
+        <Text width={160}>Localistation</Text>
+        <Text width={160} style={{color: '#989898' }}>Paris</Text>
+        </View>
       </View>
     </View>
 

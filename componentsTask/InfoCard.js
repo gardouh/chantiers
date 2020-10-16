@@ -47,24 +47,24 @@ export default ({ onPress }) => (
         source={require('../assets/chantier.png')}
       />
       <ThinRedLine onPress={onPress} />
-      <Text style={{color: 'white'}}>Jeudi 15 Octobre 2020</Text>
+      <Text style={{color: 'white'}}>Chantier Paris</Text>
     </View>
 
     <View style={styles.rightPane}>
       <View style={{ flex: 1, flexDirection: 'column' }}>
-        <Text width={160}>Heure arrivée</Text>
-        <Text width={160} style={{color: '#989898' }}>9h10</Text>
+        <Text width={160}>Date de commencement</Text>
+        <Text width={160} style={{color: '#989898' }}>15/10/2020</Text>
       </View>
 
       <View style={{ flexDirection: 'row' }}>
         <View style={{ flex: 1 }}>
-        <Text width={160}>Heure départ</Text>
-        <Text width={160} style={{color: '#989898' }}>17h09</Text>
+        <Text width={160}>Date de fin prévu</Text>
+        <Text width={160} style={{color: '#989898' }}>15/10/2022</Text>
         </View>
 
         <View style={{ flex: 1 }}>
-        <Text width={160}>Position</Text>
-        <Text width={160} style={{color: '#989898' }}>15,19</Text>
+        <Text width={160}>Localistation</Text>
+        <Text width={160} style={{color: '#989898' }}>Paris</Text>
         </View>
       </View>
     </View>
